@@ -9,6 +9,7 @@ jobs:
         steps:
             - node/install
             - checkout 
+            - aws-cli/setup
             - run:
                 name: Install Front-End Dependencies
                 command: npm run frontend:install
@@ -21,11 +22,6 @@ jobs:
             - run:
                 name: Back-End Build
                 command: npm run backend:build
-    deploy:
-        docker: 
-            - image: "cimg/base:stable"
-        steps:
-            - node/install
             - run:
                 name: Deploy Backend Application
                 command: npm run backend:deploy
