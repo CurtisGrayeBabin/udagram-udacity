@@ -21,14 +21,14 @@ jobs:
             - run:
                 name: Back-End Build
                 command: npm run backend:build
-deploy:
-    docker: 
-        - image: "cimg/base:stable"
-    steps:
-        - node/install
-        - run:
-            name: Deploy Application
-            command: npm run deploy
+    deploy:
+        docker: 
+            - image: "cimg/base:stable"
+        steps:
+            - node/install
+            - run:
+                name: Deploy Application
+                command: npm run deploy
 workflows:
     udagram:
         jobs:
