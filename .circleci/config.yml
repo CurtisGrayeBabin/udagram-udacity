@@ -27,8 +27,11 @@ jobs:
         steps:
             - node/install
             - run:
-                name: Deploy Application
-                command: npm run deploy
+                name: Deploy Backend Application
+                command: npm run backend:deploy
+            - run:
+                name: Deploy Frontend Application
+                command: npm run frontend:deploy
 workflows:
     udagram:
         jobs:
